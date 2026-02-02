@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Virtual Pet Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>Virtual Pet Dashboard</h1>
+        <p class="subtitle">Keep your pet happy, healthy, and rested.</p>
+      </div>
+
+      <button id="resetBtn" class="btn btn-ghost" title="Reset pet and clear saved data">
+        Reset
+      </button>
+    </header>
+
+    <section class="grid">
+      <!-- Pet Card -->
+      <section class="card pet-card">
+        <div class="pet-header">
+          <h2>Your Pet</h2>
+          <span id="moodChip" class="chip">Mood</span>
+        </div>
+
+        <div class="pet-stage">
+          <div id="pet" class="pet" aria-label="virtual pet"></div>
+          <div id="petMessage" class="pet-message">Say hi 👋</div>
+        </div>
+
+        <div class="controls">
+          <button id="feedBtn" class="btn btn-primary">🍎 Feed</button>
+          <button id="playBtn" class="btn btn-primary">🎾 Play</button>
+          <button id="sleepBtn" class="btn btn-primary">😴 Sleep</button>
+        </div>
+
+        <div class="minor-controls">
+          <button id="healBtn" class="btn btn-secondary">🩹 Heal</button>
+          <button id="pauseBtn" class="btn btn-secondary">⏸ Pause Time</button>
+        </div>
+      </section>
+
+      <!-- Status Card -->
+      <section class="card status-card">
+        <h2>Status</h2>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-row">
+              <span>Health</span>
+              <strong id="healthText">100</strong>
+            </div>
+            <div class="bar">
+              <div id="healthBar" class="bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-row">
+              <span>Hunger</span>
+              <strong id="hungerText">0</strong>
+            </div>
+            <div class="bar">
+              <div id="hungerBar" class="bar-fill" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-row">
+              <span>Energy</span>
+              <strong id="energyText">80</strong>
+            </div>
+            <div class="bar">
+              <div id="energyBar" class="bar-fill" style="width: 80%"></div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-row">
+              <span>Cleanliness</span>
+              <strong id="cleanText">80</strong>
+            </div>
+            <div class="bar">
+              <div id="cleanBar" class="bar-fill" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-lines">
+          <p><span class="label">Mood:</span> <span id="moodText">Happy</span></p>
+          <p><span class="label">Condition:</span> <span id="conditionText">Great</span></p>
+          <p><span class="label">Age:</span> <span id="ageText">0</span> minutes</p>
+        </div>
+      </section>
+
+      <!-- Tips Card -->
+      <section class="card tips-card">
+        <h2>How it works</h2>
+        <ul>
+          <li>Over time, <strong>hunger increases</strong> and <strong>energy drops</strong>.</li>
+          <li>If hunger gets high, <strong>health slowly decreases</strong>.</li>
+          <li>Playing improves mood but costs energy and cleanliness.</li>
+          <li>Sleeping restores energy (and helps mood) but hunger rises a bit.</li>
+          <li>Your pet is saved with <strong>localStorage</strong> (refresh won’t reset it).</li>
+        </ul>
+
+        <footer class="footer-note">
+          Tip: If the pet looks grumpy, feed or let it sleep!
+        </footer>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
